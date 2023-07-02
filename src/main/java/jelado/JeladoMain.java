@@ -49,4 +49,3 @@ public class JeladoMain {
         System.out.printf("A jeladó által bejárt össztávolság: %.3f", jelado.getOsszesTav());
     }
 }
-

@@ -38,4 +38,9 @@ class JeladoTest {
         Teglalap teglalap = new Teglalap(4, 147, 639, 727);
         assertEquals(teglalap, jelado.getJeladoMaxTerulet());
     }
+
+    @Test
+    void getOsszesTavTest() {
+        assertEquals(2007.6765793161921, jelado.getOsszesTav());
+    }
 }
