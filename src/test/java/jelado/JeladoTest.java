@@ -40,7 +40,14 @@ class JeladoTest {
     }
 
     @Test
+    void tavolsagTest() {
+        Jel jel = new Jel(LocalTime.of(0, 0, 0), 0, 0);
+        Jel masik = new Jel(LocalTime.of(0, 0, 0), 3, 4);
+        assertEquals(5, jel.tavolsag(masik));
+    }
+
+    @Test
     void getOsszesTavTest() {
-        assertEquals(2007.6765793161921, jelado.getOsszesTav());
+        assertEquals(2007.676579316191, jelado.getOsszesTav());
     }
 }

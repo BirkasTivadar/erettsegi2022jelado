@@ -8,8 +8,8 @@ import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.stream.IntStream;
 
 public class Jelado {
 
@@ -75,23 +75,9 @@ public class Jelado {
         return new Teglalap(minX, maxX, minY, maxY);
     }
 
-    private double tavolsag(Jel start, Jel end) {
-        int startX = start.coordinateX();
-        int startY = start.coordinateY();
-        int endX = end.coordinateX();
-        int endY = end.coordinateY();
-        int x = Math.abs(endX - startX);
-        int y = Math.abs(endY - startY);
-        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
-    }
-
     public double getOsszesTav() {
-        List<Jel> jelList = jelek.values().stream().toList();
-        int length = jelList.size();
-        double osszTav = 0;
-        for (int i = 1; i < length; i++) {
-            osszTav += tavolsag(jelList.get(i - 1), jelList.get(i));
-        }
-        return osszTav;
+        return IntStream.range(1, jelek.size())
+                .mapToDouble(i -> jelek.get(i).tavolsag(jelek.get(i + 1)))
+                .sum();
     }
 }
