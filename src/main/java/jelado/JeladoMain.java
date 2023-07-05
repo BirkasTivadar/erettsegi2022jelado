@@ -25,7 +25,7 @@ public class JeladoMain {
 //      4. Adja meg, mennyi idő telt el az első és az utolsó észlelés között! Az időt óra:perc:mperc alakban írja a képernyőre!
         System.out.println();
         System.out.println("4. feladat");
-        System.out.printf("Az eltelt idő az első és az utolsó észlelés között: %s", jelado.getDifferentTime());
+        System.out.printf("Az eltelt idő az első és az utolsó észlelés között: %s", jelado.getIdoKulonbseg());
         System.out.println();
 
 //      5. Határozza meg azt a legkisebb, a koordináta-rendszer tengelyeivel párhuzamos oldalú téglalapot, amelyből nem lépett ki a jeladó! Adja meg a téglalap bal alsó és jobb felső sarkának koordinátáit!

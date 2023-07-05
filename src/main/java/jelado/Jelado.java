@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,17 +49,8 @@ public class Jelado {
         megfelelő típusú változót is. Ezt a függvényt később használja fel legalább egy feladat
         megoldása során!
      */
-    private long eltelt(int startHour, int startMinute, int startSecond, int endHour, int endMinute, int endSecond) {
-        LocalTime startTime = LocalTime.of(startHour, startMinute, startSecond);
-        LocalTime endTime = LocalTime.of(endHour, endMinute, endSecond);
-        return startTime.until(endTime, ChronoUnit.SECONDS);
-    }
-
-    public String getDifferentTime() {
-        LocalTime startTime = getJelByOrdinalNumber(1).time();
-        LocalTime endTime = getJelByOrdinalNumber(jelek.size()).time();
-        long seconds = eltelt(startTime.getHour(), startTime.getMinute(), startTime.getSecond(), endTime.getHour(), endTime.getMinute(), endTime.getSecond());
-        return LocalTime.MIN.plusSeconds(seconds).toString();
+    public String getIdoKulonbseg() {
+        return getJelByOrdinalNumber(1).idoKulonbseg(getJelByOrdinalNumber(jelek.size()));
     }
 
     public Teglalap getJeladoMaxTerulet() {

@@ -30,7 +30,7 @@ class JeladoTest {
 
     @Test
     void getDifferentTimeTest() {
-        assertEquals("18:52:40", jelado.getDifferentTime());
+        assertEquals("18:52:40", jelado.getIdoKulonbseg());
     }
 
     @Test
