@@ -47,5 +47,8 @@ public class JeladoMain {
         System.out.println();
         System.out.println("6. feladat");
         System.out.printf("A jeladó által bejárt össztávolság: %.3f", jelado.getOsszesTav());
+        System.out.println();
+
+        jelado.printKimaradtak();
     }
 }

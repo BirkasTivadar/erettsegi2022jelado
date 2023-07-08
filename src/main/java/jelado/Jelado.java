@@ -70,4 +70,10 @@ public class Jelado {
                 .mapToDouble(i -> jelek.get(i).tavolsag(jelek.get(i + 1)))
                 .sum();
     }
+
+    public void printKimaradtak() {
+        IntStream.range(2, jelek.size()+1)
+                .filter(i -> jelek.get(i).kimaradt(jelek.get(i - 1)))
+                .forEach(i -> System.out.println(jelek.get(i).kimaradtJel(jelek.get(i - 1))));
+    }
 }
