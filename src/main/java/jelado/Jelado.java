@@ -1,6 +1,7 @@
 package jelado;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -72,8 +73,22 @@ public class Jelado {
     }
 
     public void printKimaradtak() {
-        IntStream.range(2, jelek.size()+1)
+        IntStream.range(2, jelek.size() + 1)
                 .filter(i -> jelek.get(i).kimaradt(jelek.get(i - 1)))
                 .forEach(i -> System.out.println(jelek.get(i).kimaradtJel(jelek.get(i - 1))));
     }
+
+    public void writeToFile(Path path) {
+        try (BufferedWriter bufferedWriter = Files.newBufferedWriter(path)) {
+            for (int i = 2; i < jelek.size() + 1; i++) {
+                if (jelek.get(i).kimaradt(jelek.get(i - 1))) {
+                    bufferedWriter.write(jelek.get(i).kimaradtJel(jelek.get(i - 1))
+                            .concat(System.lineSeparator()));
+                }
+            }
+        } catch (IOException ioException) {
+            throw new IllegalStateException("Can not write file", ioException);
+        }
+    }
+
 }

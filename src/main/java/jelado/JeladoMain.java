@@ -49,6 +49,18 @@ public class JeladoMain {
         System.out.printf("A jeladó által bejárt össztávolság: %.3f", jelado.getOsszesTav());
         System.out.println();
 
+        /*
+        7. Írja a kimaradt.txt fájlba a kimaradt észlelésekkel kapcsolatos adatokat! A kimeneti
+        fájlban azok a bemeneti állományban rögzített vételi időpontok jelenjenek meg, amelyek
+        előtt közvetlenül egy vagy több észlelés kimaradt! Az időpont mellett – a mintának
+        megfelelően – jelenjen meg, hogy legalább hány jel maradt ki, és az is, hogy miből
+        következtet a hiányra! Ha idő- és koordináta-eltérésből is adódik jelkimaradás, akkor a
+        nagyobb értéket írja ki! Ha az időeltérés és a koordináták eltérése alapján is ugyanannyi
+        jelkimaradásra következtetünk, akkor bármelyiket kiírhatja.
+         */
+
+        Path path = Path.of("src", "main", "resources", "kimaradt.txt");
+        jelado.writeToFile(path);
         jelado.printKimaradtak();
     }
 }

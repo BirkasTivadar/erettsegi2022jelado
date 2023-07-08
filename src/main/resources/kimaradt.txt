@@ -1,0 +1,3 @@
+4 55 33 koordináta-eltérés 2
+6 22 42 koordináta-eltérés 1
+6 32 42 koordináta-eltérés 1
