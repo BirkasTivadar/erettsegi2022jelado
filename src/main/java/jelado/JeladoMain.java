@@ -61,6 +61,8 @@ public class JeladoMain {
 
         Path path = Path.of("src", "main", "resources", "kimaradt.txt");
         jelado.writeToFile(path);
+        System.out.println();
+        System.out.println("7. feladat");
         jelado.printKimaradtak();
     }
 }
